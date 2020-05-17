@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std; 
+int func(int num) 
+{
+   int i;
+   int counter = 1;
+   for(i = 2; i <= num/2; ++i)
+   {
+      if(num % i == 0) 
+ {
+         counter = 0;
+         break;
+      }
+   }
+   return counter;
+}
+int main()
+{
+   int n , a;
+   cout << "Enter a number : \n";
+   cin >> n;
+   for(a = 2; a <= n/2; ++a)
+   {
+      if (func(a)) 
+ {
+         if (func(n - a))
+    {	
+            cout << n << " = " << a << " + " << n - a << endl;
+         }
+      }
+   }
+   return 0;
+}
